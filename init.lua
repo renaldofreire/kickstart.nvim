@@ -245,6 +245,25 @@ require('lazy').setup({
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
   --
+
+  -- Tema Catppuccin
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    lazy = false, -- Carrega imediatamente
+    priority = 1000, -- Alta prioridade para carregar antes de outros plugins
+    config = function()
+      require('catppuccin').setup {
+        flavour = 'mocha', -- Escolha entre "latte", "frappe", "macchiato" ou "mocha"
+        integrations = {
+          -- Aqui você pode ativar integrações com outros plugins (por exemplo, cmp, gitsigns, etc.)
+        },
+      }
+      vim.opt.termguicolors = true -- Certifique-se de que isso esteja definido
+      vim.cmd.colorscheme 'catppuccin' -- Aplica o esquema de cores configurado
+    end,
+  },
+
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   --
 
@@ -911,7 +930,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night' --ATIVAR TEMA
     end,
   },
 

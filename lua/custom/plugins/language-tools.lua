@@ -7,7 +7,7 @@ return {
   -- 1. Mason: O instalador de pacotes.
   -- Apenas garantimos que os executáveis que queremos (pyright, ruff) estejam na lista de instalação.
   {
-    'jay-phelps/mason.nvim',
+    'mason-org/mason.nvim',
     opts = function(_, opts)
       if type(opts.ensure_installed) == 'table' then
         vim.list_extend(opts.ensure_installed, { 'pyright', 'ruff' })

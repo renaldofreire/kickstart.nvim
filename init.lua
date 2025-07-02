@@ -1012,7 +1012,6 @@ require('lazy').setup({
   },
 })
 
--- No final de ~/.config/nvim/init.lua
 local custom_files = { 'custom.options', 'custom.plugins', 'custom.keymaps' }
 for _, file in ipairs(custom_files) do
   local ok, err = pcall(require, file)
@@ -1020,6 +1019,3 @@ for _, file in ipairs(custom_files) do
     vim.notify('Erro ao carregar arquivo de configuração pessoal: ' .. file .. '\n' .. err, vim.log.levels.WARN)
   end
 end
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
